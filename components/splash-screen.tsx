@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 export function SplashScreen() {
@@ -48,18 +47,12 @@ export function SplashScreen() {
         isComplete ? "opacity-0 pointer-events-none" : "opacity-100",
       )}
     >
-      <div className="relative w-48 h-48 mb-8">
-        <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20sdfm-gDlxg0zxe6wVV9o5cISteykVa4LQhz.png"
-          alt="SDFM 2520"
-          fill
-          className="object-contain"
-          priority
-        />
+      <div className="relative mb-8">
+        <h1 className="text-4xl font-bold text-white">Startup House</h1>
       </div>
 
       {/* Matrix-style loading text */}
-      <div className="font-mono text-white mb-4 h-6">{`LOADING_SYSTEM: ${matrixText}`}</div>
+      <div className="font-mono text-white mb-4 h-6">{`INITIALIZING_STARKNET: ${matrixText}`}</div>
 
       {/* Progress bar container */}
       <div className="w-64 h-1 bg-dark-400 rounded-full overflow-hidden">

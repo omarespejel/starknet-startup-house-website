@@ -20,10 +20,10 @@ export function AutoSliderBanner() {
     return () => clearInterval(interval)
   }, [])
 
-  const handleShopClick = () => {
-    const productSection = document.getElementById("product-section")
-    if (productSection) {
-      productSection.scrollIntoView({ behavior: "smooth" })
+  const handleLearnMoreClick = () => {
+    const aboutSection = document.getElementById("about-section")
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" })
     }
   }
 
@@ -47,11 +47,11 @@ export function AutoSliderBanner() {
       ))}
       <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center">
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-gray-100 text-center mb-4">
-          Premium Streetwear
+          Startup House
         </h1>
-        <p className="text-xl text-gray-300 text-center mb-8">Elevate Your Style</p>
-        <Button onClick={handleShopClick} size="lg" variant="outline">
-          SHOP
+        <p className="text-xl text-gray-300 text-center mb-8">Where Starknet Tech Meets Business Traction</p>
+        <Button onClick={handleLearnMoreClick} size="lg" variant="outline">
+          LEARN MORE
         </Button>
       </div>
     </div>

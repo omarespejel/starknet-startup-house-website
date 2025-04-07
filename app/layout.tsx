@@ -9,9 +9,9 @@ import { CustomCursor } from "@/components/custom-cursor"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "SDFM 2520 - Premium Hoodies",
-  description: "Premium streetwear and comfortable hoodies",
-    generator: 'v0.dev'
+  title: "Startup House - Starknet Tech Meets Business Traction",
+  description: "A selective 3-5 day intensive program exclusively for MVP-stage Starknet projects, providing structured mentorship on both business development and technical advancement.",
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
         {children}
         <footer className="w-full py-6 px-4 bg-dark-600 text-gray-400">
           <div className="container mx-auto text-center">
-            <p>&copy; 2023 SDFM 2520. All rights reserved.</p>
+            <p>&copy; 2025 Startup House. All rights reserved.</p>
           </div>
         </footer>
         <CustomCursor />
