@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
 
 const images = [
   "https://64.media.tumblr.com/db8472cfbb89a155148003b053d5f3de/4d6d987e0cee7307-8e/s400x225/158142e8e876044a6191733a02f6ee5ac1643b58.gif",
@@ -45,14 +44,18 @@ export function AutoSliderBanner() {
           />
         </div>
       ))}
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center">
-        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-gray-100 text-center mb-4">
-          Startup House
-        </h1>
-        <p className="text-xl text-gray-300 text-center mb-8">Where Starknet Tech Meets Business Traction</p>
-        <Button onClick={handleLearnMoreClick} size="lg" variant="outline">
-          LEARN MORE
-        </Button>
+      <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex flex-col items-center justify-center">
+        <div className="max-w-4xl px-6">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-white text-center mb-6">
+            Startup House
+          </h1>
+          <p className="text-xl md:text-2xl font-light text-gray-100 text-center mb-10">Where Starknet Tech Meets Business Traction</p>
+          <div className="flex justify-center">
+            <button onClick={handleLearnMoreClick} className="yc-button text-lg px-8 py-4 shadow-md hover:shadow-lg transition-all">
+              LEARN MORE
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -2,24 +2,82 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    "app/**/*.{ts,tsx}",
-    "components/**/*.{ts,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-      "*.{js,ts,jsx,tsx,mdx}"
-],
+    './pages/**/*.{js,jsx,ts,tsx}',
+    './components/**/*.{js,jsx,ts,tsx}',
+    './app/**/*.{js,jsx,ts,tsx}',
+    './src/**/*.{js,jsx,ts,tsx}',
+	],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
+      fontFamily: {
+        syncopate: ['Syncopate', 'sans-serif'],
+        urbanist: ['Urbanist', 'sans-serif'],
+      },
       colors: {
-        dark: {
-          100: "#2A2A2A",
-          200: "#252525",
-          300: "#202020",
-          400: "#1A1A1A",
-          500: "#151515",
-          600: "#101010",
-          900: "#0A0A0A",
+        "dark-900": "#050505",
+        "dark-800": "#0F0F0F",
+        "dark-700": "#1A1A1A",
+        "dark-600": "#252525",
+        "dark-400": "#3F3F3F",
+        "purple": {
+          100: "#EDE5FB",
+          200: "#D6C5F6",
+          300: "#BA9CEF",
+          400: "#A17AEA",
+          500: "#7B3FE4",
+          600: "#6332B7",
+          700: "#4A258A",
+          800: "#32195C",
+          900: "#190C2E",
+        },
+        // YC-inspired color palette
+        "yc": {
+          // Orange shades
+          orange: {
+            50: "#FFF7F0",
+            100: "#FFEEDA",
+            200: "#FFD6B5",
+            300: "#FFBD8F",
+            400: "#FFA46A",
+            500: "#FF6600", // Main YC orange
+            600: "#E65C00",
+            700: "#CC5100",
+            800: "#A34100",
+            900: "#7A3100",
+          },
+          // Neutral colors (replacing dark)
+          neutral: {
+            50: "#FAFAF5", // Light background
+            100: "#F5F5F0",
+            200: "#EAEAE5",
+            300: "#DEDEDA",
+            400: "#CCCCC7",
+            500: "#AAAAA5",
+            600: "#888883",
+            700: "#666662",
+            800: "#444442",
+            900: "#222221", // Darkest (for text)
+          },
+          // Accent blue (complementary to orange)
+          blue: {
+            50: "#F2F7FC",
+            100: "#E3EEF9",
+            200: "#C2DEF1",
+            300: "#9BC8E8",
+            400: "#6DADE0",
+            500: "#3B88D2",
+            600: "#2D6CB7",
+            700: "#255095",
+            800: "#1C3A78",
+            900: "#152A5A",
+          },
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -55,24 +113,24 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
-      keyframes: {
-        "matrix-fade": {
-          "0%, 100%": { opacity: 0 },
-          "50%": { opacity: 1 },
-        },
-        click: {
-          "0%, 100%": { transform: "scale(1)" },
-          "50%": { transform: "scale(0.95)" },
-        },
-      },
-      animation: {
-        matrix: "matrix-fade 0.5s ease-in-out infinite",
-        click: "click 0.3s ease-in-out",
-      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },

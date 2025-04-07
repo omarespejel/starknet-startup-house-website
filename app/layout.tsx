@@ -1,12 +1,8 @@
 import "./globals.css"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
 import type React from "react"
 import { SplashScreen } from "@/components/splash-screen"
 import { Logo } from "@/components/logo"
-import { CustomCursor } from "@/components/custom-cursor"
-
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Startup House - Starknet Tech Meets Business Traction",
@@ -20,19 +16,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className={`${inter.className} bg-dark-900 text-gray-100`}>
+    <html lang="en" className="scroll-smooth">
+      <body className="yc-body">
         <SplashScreen />
         <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none">
           <Logo />
         </div>
         {children}
-        <footer className="w-full py-6 px-4 bg-dark-600 text-gray-400">
+        <footer className="w-full py-6 px-4 bg-yc-neutral-100 text-yc-neutral-600">
           <div className="container mx-auto text-center">
             <p>&copy; 2025 Startup House. All rights reserved.</p>
           </div>
         </footer>
-        <CustomCursor />
       </body>
     </html>
   )

@@ -43,24 +43,27 @@ export function SplashScreen() {
   return (
     <div
       className={cn(
-        "fixed inset-0 z-[60] flex flex-col items-center justify-center bg-dark-900 transition-opacity duration-500",
-        isComplete ? "opacity-0 pointer-events-none" : "opacity-100",
+        "fixed inset-0 z-[60] flex flex-col items-center justify-center bg-yc-neutral-50 transition-opacity duration-500",
+        isComplete ? "opacity-0 pointer-events-none" : "opacity-100"
       )}
     >
       <div className="relative mb-8">
-        <h1 className="text-4xl font-bold text-white">Startup House</h1>
+        <h1 className="text-5xl lg:text-6xl font-sans font-bold text-yc-orange-500">Startup House</h1>
       </div>
 
-      {/* Matrix-style loading text */}
-      <div className="font-mono text-white mb-4 h-6">{`INITIALIZING_STARKNET: ${matrixText}`}</div>
+      {/* Loading message */}
+      <div className="font-sans text-yc-neutral-700 mb-6 h-6">Initializing StarkNet Resources</div>
 
       {/* Progress bar container */}
-      <div className="w-64 h-1 bg-dark-400 rounded-full overflow-hidden">
-        <div className="h-full bg-white transition-all duration-100 ease-out" style={{ width: `${progress}%` }} />
+      <div className="w-64 h-2 bg-yc-neutral-200 rounded-sm overflow-hidden">
+        <div 
+          className="h-full bg-yc-orange-500 transition-all duration-100 ease-out" 
+          style={{ width: `${progress}%` }} 
+        />
       </div>
 
       {/* Progress percentage */}
-      <div className="mt-2 font-mono text-sm text-white">{`${progress}%`}</div>
+      <div className="mt-3 font-sans text-sm text-yc-neutral-600">{`${progress}%`}</div>
     </div>
   )
 }

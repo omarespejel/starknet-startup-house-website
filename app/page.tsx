@@ -42,42 +42,43 @@ export default function Home() {
       <AutoSliderBanner />
 
       {/* About Section */}
-      <section id="about-section" className="w-full py-12 md:py-24 bg-dark-900">
-        <div className="container mx-auto px-4">
-          <h2 className="mb-8 text-3xl font-bold text-center text-gray-100">Startup House</h2>
-          <p className="text-xl text-gray-300 text-center mb-8">Where Starknet Tech Meets Business Traction</p>
-          <p className="text-lg text-gray-400 text-center mb-8 max-w-3xl mx-auto">
+      <section id="about-section" className="w-full py-12 md:py-24 bg-white">
+        <div className="yc-container">
+          <h2 className="mb-8 text-3xl font-bold text-center text-yc-neutral-900">Startup House</h2>
+          <p className="text-xl text-yc-neutral-700 text-center mb-8">Where Starknet Tech Meets Business Traction</p>
+          <p className="text-lg text-yc-neutral-600 text-center mb-8 max-w-3xl mx-auto">
             Startup House is a selective program for MVP-stage Starknet projects, providing structured mentorship on both business 
             development and technical advancement. We bridge the gap between technical capability and commercial viability.
           </p>
           <div className="flex justify-center">
-            <Button size="lg" variant="outline">
+            <button className="yc-button text-lg px-6 py-3">
               Apply Now
-            </Button>
+            </button>
           </div>
         </div>
       </section>
 
       {/* Upcoming Houses Section */}
-      <section id="houses-section" className="w-full py-12 md:py-24 bg-dark-800">
-        <div className="container mx-auto px-4">
-          <h2 className="mb-8 text-3xl font-bold text-center text-gray-100">Upcoming Houses</h2>
+      <section id="houses-section" className="w-full py-12 md:py-24 bg-yc-neutral-50">
+        <div className="yc-container">
+          <h2 className="mb-8 text-3xl font-bold text-center text-yc-neutral-900">Upcoming Houses</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {startupHouses.map((house) => (
-              <div key={house.id} className="bg-dark-700 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300">
+              <div key={house.id} className="yc-card overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <div className="h-64 relative">
                   <img 
                     src={house.image} 
                     alt={`${house.location} Startup House`} 
                     className="w-full h-full object-cover"
                   />
+                  <div className="absolute inset-0 bg-black bg-opacity-20"></div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-gray-100 mb-2">{house.location}</h3>
-                  <p className="text-lg text-gray-300 mb-4">{house.date}</p>
-                  <Button size="sm" variant="outline">
+                  <h3 className="text-2xl font-bold text-yc-neutral-900 mb-2">{house.location}</h3>
+                  <p className="text-lg text-yc-neutral-700 mb-4">{house.date}</p>
+                  <button className="yc-button">
                     Learn More
-                  </Button>
+                  </button>
                 </div>
               </div>
             ))}
@@ -86,14 +87,14 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq-section" className="w-full py-12 md:py-24 bg-dark-900">
-        <div className="container mx-auto px-4">
-          <h2 className="mb-8 text-3xl font-bold text-center text-gray-100">Frequently Asked Questions</h2>
+      <section id="faq-section" className="w-full py-12 md:py-24 bg-white">
+        <div className="yc-container">
+          <h2 className="mb-8 text-3xl font-bold text-center text-yc-neutral-900">Frequently Asked Questions</h2>
           <div className="max-w-3xl mx-auto space-y-6">
             {faqItems.map((item, index) => (
-              <div key={index} className="bg-dark-700 rounded-lg p-6">
-                <h3 className="text-xl font-bold text-gray-100 mb-2">{item.question}</h3>
-                <p className="text-gray-300">{item.answer}</p>
+              <div key={index} className="yc-card p-6 shadow-sm transition-all duration-300 hover:shadow-md">
+                <h3 className="text-xl font-bold text-yc-neutral-900 mb-2">{item.question}</h3>
+                <p className="text-yc-neutral-700">{item.answer}</p>
               </div>
             ))}
           </div>
@@ -101,21 +102,30 @@ export default function Home() {
       </section>
 
       {/* Program Benefits Section */}
-      <section id="benefits-section" className="w-full py-12 md:py-24 bg-dark-800">
-        <div className="container mx-auto px-4">
-          <h2 className="mb-8 text-3xl font-bold text-center text-gray-100">Program Benefits</h2>
+      <section id="benefits-section" className="w-full py-12 md:py-24 bg-yc-neutral-50">
+        <div className="yc-container">
+          <h2 className="mb-8 text-3xl font-bold text-center text-yc-neutral-900">Program Benefits</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-dark-700 rounded-lg p-6 text-center">
-              <h3 className="text-xl font-bold text-gray-100 mb-4">Business Strategy</h3>
-              <p className="text-gray-300">Develop sustainable business models and go-to-market strategies for your Starknet project</p>
+            <div className="yc-card p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-yc-neutral-100 flex items-center justify-center">
+                <span className="text-yc-orange-500 text-2xl">💼</span>
+              </div>
+              <h3 className="text-xl font-bold text-yc-neutral-900 mb-4">Business Strategy</h3>
+              <p className="text-yc-neutral-700">Develop sustainable business models and go-to-market strategies for your Starknet project</p>
             </div>
-            <div className="bg-dark-700 rounded-lg p-6 text-center">
-              <h3 className="text-xl font-bold text-gray-100 mb-4">Technical Mentorship</h3>
-              <p className="text-gray-300">Receive guidance from experienced Starknet developers to enhance your product</p>
+            <div className="yc-card p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-yc-neutral-100 flex items-center justify-center">
+                <span className="text-yc-orange-500 text-2xl">👨‍💻</span>
+              </div>
+              <h3 className="text-xl font-bold text-yc-neutral-900 mb-4">Technical Mentorship</h3>
+              <p className="text-yc-neutral-700">Receive guidance from experienced Starknet developers to enhance your product</p>
             </div>
-            <div className="bg-dark-700 rounded-lg p-6 text-center">
-              <h3 className="text-xl font-bold text-gray-100 mb-4">Network Growth</h3>
-              <p className="text-gray-300">Connect with investors, potential users, and other builders in the Starknet ecosystem</p>
+            <div className="yc-card p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-yc-neutral-100 flex items-center justify-center">
+                <span className="text-yc-orange-500 text-2xl">🌐</span>
+              </div>
+              <h3 className="text-xl font-bold text-yc-neutral-900 mb-4">Network Growth</h3>
+              <p className="text-yc-neutral-700">Connect with investors, potential users, and other builders in the Starknet ecosystem</p>
             </div>
           </div>
         </div>
